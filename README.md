@@ -32,15 +32,14 @@ to complete (similar to how things are in real life).
 and only get the list from the link provided if nothing is stored in the repo (this reduces process time root server needs to process
 all data for succeeding calls) - alternatively, this list can also be accessed through /retrieveCakes
 Add Cake functionality could also be accessed through this ROOT server
-2. Add new cake function is available through /addCake - function tested via POSTMAN (not available via UI provided - I've added a form in the landingPage
-that isn't fully implemented yet - as data needs to be binded to a JSON object for it to work)
-    Sample inpuit:
+2. Add new cake function is available through /api/addCake - function tested via POSTMAN (not available via UI provided - I've added a form in the landingPage but that accesses another method in the controller called addCake)
+    Sample input:
     {
         "title" : "Banoffee cheesecake",
         "desc" : "A Banana caramel cheesecake",
         "image" : "https://s3-eu-west-1.amazonaws.com/s3.mediafileserver.co.uk/carnation/WebFiles/RecipeImages/lemoncheesecake_lg.jpg"
     }
-    This method returns a full list of cakes including the newly added one
+    This method returns just a status OK with text "New Cake Added" - the Add Cake function accessed through the  ROOT server returns the full list of Cakes including the ones recently added.
 3. Download of the list of cakes (in JSON format) available through /cakes endpoint - this however doesn't automatically redirect to
 a page where add cake is implemented
 4. Migrate application to a more modern way
