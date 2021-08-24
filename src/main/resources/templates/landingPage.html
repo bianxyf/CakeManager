@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th> Title </th>
+        <th> Desc </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cake : ${listOfCakes}">
+        <td><span th:text="${cake.title}"></span></td>
+        <td><span th:text="${cake.desc}"> Author </span></td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+
+<h1>Add a New Cake</h1>
+<form method="post" action="addCake">
+    <table >
+        <tr>
+            <td>Title : </td>
+            <td><input name="title"  /></td>
+        </tr>
+        <tr>
+            <td>Description :</td>
+            <td><input name="desc" /></td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td><input type="submit" value="Save" /></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
